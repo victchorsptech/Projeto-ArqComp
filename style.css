@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+}
+/* Paleta de Cores */
+:root{
+    --black: #0d101979;
+    --borderTable: #bb0404;
+    --text: #fff;
+    --primary: #912525;
+    --success: #48b16c;
+    --fail: #D2200B;
+    --textFail: #F24646;
+}
+html, body{
+    background: var(--black);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* Instruções do Jogo */
+.content-instructions{
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.60);
+}
+/* Botão Fechar */
+.close-instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 75vw;
+    padding: 1em 0;
+}
+.container-instructions {
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30vw;
+    width: 80vw;
+    background: var(--black);
+    border: 1px solid var(--primary);
+    border-radius: 0.25em;
+}
+.container-instructions article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.container-instructions h1{
+    font-size: 3em;
+    color: var(--primary);
+}
+.container-instructions p{
+    font-size: 1.2em;
+    color: var(--text);
+    margin-bottom: 1em;
+}
+.container-instructions li{
+    list-style: none;
+    font-size: 1em;
+    color: var(--text);
+    margin: 0.25em;
+}
+/* Fim Instruções */
+/* Informações da Página */
+.info-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.info-page h1{
+    color: var(--primary);
+    font-size: 4em;
+    letter-spacing: 0.5px;
+}
+
+/* Fim Informações */
+/* Tabela */
+table{
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+}
+/* Linhas */
+tr{}
+/* Colunas */
+td{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    color: var(--text);
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Colunas Preenchiveis */
+.show_column{
+    border: 1.5px solid var(--borderTable);
+}
+/* Número da Palavra */
+td span{
+    margin: -0.8em;
+    font-size: 0.35em;
+    font-weight: 800;
+    color: var(--primary);
+    position: absolute;
+}
+
+/* Menu Lateral */
+.vertical-navbar{
+    height: 100%;
+    width: 27vh;
+    padding: 2rem 1rem;
+    position: fixed;
+    z-index: 99;
+    background: var(--black);
+    border-right: 1.5px solid var(--borderTable);
+    display: none;
+}
+.content-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.content-navbar label{
+    color: var(--text);
+    display: block;
+    font-size: 1.35em;
+    margin: 1em 0;
+}
+/* Input */
+input{
+    color: var(--text);
+    background: var(--black);
+    border: 1.5px solid var(--borderTable);
+    padding: 1em 5em 1em 2em;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    transition: box-shadow 0.25s ease-in;
+}
+input:focus{box-shadow: 0px 0px 3px 1px var(--primary);}
+::placeholder{
+    color: #019cd5;
+    text-transform: initial;
+}
+/* Botão */
+.btn-validation{
+    margin: 1em 0;
+    background: var(--primary);
+    color: var(--text);
+    padding: 1em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--primary);
+    border-radius: 0.25em;
+    transition: background 0.5s ease-in;
+    cursor: pointer;
+}
+.btn-validation:hover{
+    background: transparent;
+    color: var(--primary);
+}
+/* Botão Fechar */
+svg{float: right;cursor: pointer;}
+/* Mensagem de Validação */
+.content-navbar span{
+    font-size: 1em;
+    letter-spacing: 0.25px;
+}
+/* Fim Menu */

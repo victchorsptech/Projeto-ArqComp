@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palavras Cruzadas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+<!-- Seção Instruções -->
+<section class="content-instructions" id="instructions">
+    <div class="container-instructions">
+        <!-- Icone Fechar -->
+        <div class="close-instructions">
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="close_instructions()">
+                <line fill="none" stroke="#fff" stroke-width="1.4" x1="1" y1="1" x2="19" y2="19" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">            
+                </line>
+                <line fill="none" stroke="#fff" stroke-width="1.4" x1="19" y1="1" x2="1" y2="19" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">
+                </line>
+            </svg>
+        </div>
+        <!-- Fim Icone Fechar -->
+        <article>
+            <h1>Bem-Vindo ao Palavras Cruzadas.</h1>
+            <li> Uma infraestrutura de TI é a base tecnológica que permite o funcionamento de uma empresa. </li>
+            <li> Ou seja, são componentes, físicos ou virtuais, que possibilitam que suas atividades sejam executadas,</li>
+             <li>da impressão de um contrato ao compartilhamento de arquivos e informações via rede interna entre os colaboradores.</li>
+            <p>Que tal se divertir enquanto aprende ?</p>
+
+            <button onclick="close_instructions()" class="start">Começar</button>
+        </article>
+    </div>
+</section>
+<!-- Fim Instruções -->
+<!-- Seção Questão -->
+<section class="vertical-navbar" id="vertical_navbar">
+    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="close_navbar()">
+        <line fill="none" stroke="#fff" stroke-width="1.4" x1="1" y1="1" x2="19" y2="19" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">            
+        </line>
+        <line fill="none" stroke="#fff" stroke-width="1.4" x1="19" y1="1" x2="1" y2="19" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">
+        </line>
+    </svg>
+    <div class="content-navbar">
+        <label id="question"></label>
+        <input type="text" placeholder="Insira a palavra" id="input_answer">
+        <button class="btn-validation" onclick="validar_resposta()" id="btn">Validar Resposta</button>
+        <span id="validation_msg"></span>
+    </div>
+</section>
+<!-- Fim Questão -->
+<!-- Conteúdo Palavra Cruzada -->
+
+<section class="container-crossword" id="crossword">
+<article class="info-page">
+    <h1>Palavras Cruzadas</h1>
+    <p> <b>Diulia Victória e Victor Souza - ADS-C </b> </p>
+    <img src="interrogação.png"  onclick="duvidas()">
+</article>
+
+
+
+<!-- Tabela -->
+<table>
+<!-- Linha 1 -->
+<tr>
+    <!-- Colunas -->
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&downarrow;</td>
+    <td></td>
+    <td></td>
+</tr>
+<tr>
+    <!-- Colunas -->
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="cpu_1" onclick="cpu()"></td>
+    <td class="show_column" id="cs_2" onclick="cs()"></td>
+    <td class="seta">&downarrow;</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&downarrow;</td>
+</tr>
+<!-- Linha 2 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="cpu_2" onclick="cpu()"></td>
+    <td></td>
+    <td class="show_column" id="ula_1" onclick="ula()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_1" onclick="mem_massa()"></td>
+</tr>
+<!-- Linha 3 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="dual_1" onclick="dual_core()"></td>
+    <td class="show_column" id="dual_cpu_2"></td>
+    <td class="show_column" id="dual_3" onclick="dual_core()"></td>
+    <td class="show_column" id="dual_ula_2"></td>
+    <td class="show_column" id="dual_5" onclick="dual_core()"></td>
+    <td class="show_column" id="dual_6" onclick="dual_core()"></td>
+    <td class="show_column" id="dual_7" onclick="dual_core()"></td>
+    <td class="show_column" id="dual_8" onclick="dual_core()"></td>
+    <td class="show_column" id="dual_memoria_9"></td>
+</tr>
+<!-- Linha 4 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="ula_3" onclick="ula()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_2" onclick="memoria()"></td>
+</tr>
+<!-- Linha 5 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="eprom_1" onclick="eprom()"></td>
+    <td class="show_column" id="eprom_2" onclick="eprom()"></td>
+    <td class="show_column" id="eprom_3" onclick="eprom()"></td>
+    <td class="show_column" id="eprom_memoria_4"></td>
+    <td class="show_column" id="eprom_5" onclick="eprom()"></td>
+
+</tr>
+<!-- Linha 6 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_4" onclick="memoria()"></td>
+    
+</tr>
+<!-- Linha 7 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="memoria_i7_5" onclick="i7()"></td>
+    <td class="show_column" id="i7_1" onclick="i7()"></td>
+   
+</tr>
+<!-- Linha 8 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_6" onclick="memoria()"></td>
+</tr>
+<!-- Linha 9 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_7" onclick="memoria()"></td>
+</tr>
+<!-- Linha 10 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="quad_1" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_2" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_3" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_memoria_4" onclick="memoria()"></td>
+    <td class="show_column" id="quad_5" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_6" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_7" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_8" onclick="quad_core()"></td>
+    <td class="show_column" id="quad_9" onclick="quad_core()"></td>
+</tr>
+<!-- Linha 11 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_8" onclick="memoria()"></td>
+</tr>
+<!-- Linha 12 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&downarrow;</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_9" onclick="memoria()"></td>
+</tr>
+<!-- Linha 13 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_1" onclick="adress_bus()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&downarrow;</td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="rom_1" onclick="rom()"></td>
+    <td class="show_column" id="rom_2" onclick="rom()"></td>
+    <td class="show_column" id="rom_memoria_3" onclick="memoria()"></td>
+    <td></td>
+</tr>
+<!-- Linha 14 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_2" onclick="adress_bus()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="flash_1" onclick="flash()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="memoria_10" onclick="memoria()"></td>
+</tr>
+<!-- Linha 15 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_3" onclick="adress_bus()"></td>
+    <td></td>
+    <td class="seta">&downarrow;</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="flash_2" onclick="flash()"></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&downarrow;</td>
+    <td></td>
+    <td class="show_column" id="memoria_11" onclick="memoria()"></td>
+</tr>
+<!-- Linha 16 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="registradores_1" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_adress_2" onclick="adress_bus()"></td>
+    <td class="show_column" id="registradores_3" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_i5_4" onclick="i5()"></td>
+    <td class="show_column" id="registradores_5" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_6" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_7" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_flash_8" onclick="flash()"></td>
+    <td class="show_column" id="registradores_9" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_10" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_ram_11" onclick="ram()"></td>
+    <td class="show_column" id="registradores_12" onclick="registradores()"></td>
+    <td class="show_column" id="registradores_memoria_13" onclick="memoria()"></td>
+</tr>
+<!-- Linha 17 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_4" onclick="adress_bus()"></td>
+    <td></td>
+    <td class="show_column" id="i5_2" onclick="i5()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="flash_3" onclick="flash()"></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="ram_1" onclick="ram()"></td>
+    <td></td>
+    <td class="show_column" id="memoria_13" onclick="memoria()"></td>
+</tr>
+<!-- Linha 18 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_5" onclick="adress()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="flash_4" onclick="flash()"></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="dma_1" onclick="dma()"></td>
+    <td class="show_column" id="ram_dma_2" onclick="dma()"></td>
+    <td class="show_column" id="dma_2" onclick="dma()"></td>
+</tr>
+<!-- Linha 19 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_6" onclick="adress_bus()"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+<!-- Linha 20 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td class="seta">&rightarrow;</td>
+    <td class="show_column" id="data_1" onclick="data_bus()"></td>
+    <td class="show_column" id="data_2" onclick="data_bus()"></td>
+    <td class="show_column" id="data_3" onclick="data_bus()"></td>
+    <td class="show_column" id="data_4" onclick="data_bus()"></td>
+    <td class="show_column" id="data_5" onclick="data_bus()"></td>
+    <td class="show_column" id="data_adress_6" onclick="adress_bus()"></td>
+    <td class="show_column" id="data_7" onclick="data_bus()"></td>
+    <td class="show_column" id="data_8" onclick="data_bus()"></td>
+</tr>
+<!-- Linha 21 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_7" onclick="adress_bus()"></td>
+</tr>
+<!-- Linha 22 -->
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="show_column" id="adress_8" onclick="adress_bus()"></td>
+</tr>
+</table>
+<!-- Fim Tabela -->
+</section>
+<!-- Fim Palavra Cruzada -->
+</body>
+</html>
