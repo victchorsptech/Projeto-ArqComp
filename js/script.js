@@ -1,3 +1,27 @@
+// temporizador
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
+        if (--timer <= 0) {
+            timer = 0;
+            resposta.innerHTML = `Infelizmente o tempo acabou! Clique no botão abaixo para iniciar um novo jogo `;
+            novo_jogo.style.display = 'flex'
+        }
+    }, 1000);
+}
+window.onload = function () {
+    var duration = 60 * 5; // Converter para segundos
+        display = document.querySelector('#timer'); // selecionando o timer
+    startTimer(duration, display); // iniciando o timer
+};
+
+
+
 // Fechar Instruções
 function close_instructions(){
     instructions.style.display = 'none';
@@ -7,11 +31,8 @@ function close_navbar(){
     vertical_navbar.style.display = 'none';
     crossword.style.padding = '0';
 }
-// duvidas
-function duvidas(){
-    duvida.style.display = 'none';
-    crossword.style.padding = '0';
-}
+
+
 // CS
 function cs(){
     vertical_navbar.style.display = 'block';
@@ -234,7 +255,7 @@ function mem_massa(){
 function eprom(){
     vertical_navbar.style.display = 'block';
     crossword.style.padding = '0 0 0 27vh';
-    question.innerHTML = `Chip de memória que guarda seus dadoa quando a energia
+    question.innerHTML = `Chip de memória que guarda seus dados quando a energia
     é desligada?`;
     document.getElementById("btn").onclick = function validar_dual_core(){
         // Variavel Input

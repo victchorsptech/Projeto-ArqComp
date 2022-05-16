@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;800&display=swap');
+
+
+
 *{
     padding: 0;
     margin: 0;
@@ -7,7 +10,7 @@
 }
 /* Paleta de Cores */
 :root{
-    --black: #0d101979;
+    --black: #0d101994;
     --borderTable: #bb0404;
     --text: #fff;
     --primary: #912525;
@@ -87,6 +90,14 @@ html, body{
     letter-spacing: 0.5px;
 }
 
+img{
+    position: absolute;
+    width: 6%;
+    margin-left: -70%;
+    top: 1em;
+    cursor: pointer;
+}
+
 /* Fim Informações */
 /* Tabela */
 table{
@@ -95,7 +106,7 @@ table{
     justify-content: center;
 }
 /* Linhas */
-tr{}
+
 /* Colunas */
 td{
     width: 40px;

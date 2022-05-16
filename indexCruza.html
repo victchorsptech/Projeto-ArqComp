@@ -15,9 +15,9 @@
         <!-- Icone Fechar -->
         <div class="close-instructions">
             <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" onclick="close_instructions()">
-                <line fill="none" stroke="#fff" stroke-width="1.4" x1="1" y1="1" x2="19" y2="19" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">            
+                <line fill="none" stroke="#fff" stroke-width="1.4"  data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">            
                 </line>
-                <line fill="none" stroke="#fff" stroke-width="1.4" x1="19" y1="1" x2="1" y2="19" data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">
+                <line fill="none" stroke="#fff" stroke-width="1.4"  data-darkreader-inline-fill="" data-darkreader-inline-stroke="" style="--darkreader-inline-fill:none; --darkreader-inline-stroke:#c3b5a1;">
                 </line>
             </svg>
         </div>
@@ -52,13 +52,42 @@
 <!-- Fim Questão -->
 <!-- Conteúdo Palavra Cruzada -->
 
+
+
+
+
 <section class="container-crossword" id="crossword">
 <article class="info-page">
     <h1>Palavras Cruzadas</h1>
     <p> <b>Diulia Victória e Victor Souza - ADS-C </b> </p>
-    <img src="interrogação.png"  onclick="duvidas()">
 </article>
 
+<div class="conf"
+style="padding: 1em;
+border: 2px solid yellow;
+width: 18em;
+margin: 1.5em auto;
+border-radius: 2em;
+text-align: center;
+font-size: 1em;
+color: blueviolet;">
+<div class="timer" id="timer"></div>
+
+<div id="resposta" ></div>
+<button  onClick="window.location.reload()" id="novo_jogo"
+style="margin: 1em auto;
+background: var(--primary);
+color: var(--borderTable);
+padding: 1em;
+font-size: 1em;
+letter-spacing: 0.5px;
+border: 2px solid var(--primary);
+border-radius: 0.25em;
+cursor: pointer;
+display: none;">
+Novo Jogo</button>
+</div>
+</section>           
 
 
 <!-- Tabela -->
