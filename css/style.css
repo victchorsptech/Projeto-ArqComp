@@ -120,6 +120,30 @@ html, body{
       cursor: pointer;
 }
 
+.conf{
+padding: 1em;
+border: 2px solid yellow;
+width: 18em;
+margin: 1.5em auto;
+border-radius: 2em;
+text-align: center;
+font-size: 1em;
+color: blueviolet;
+}
+
+.conf button{
+margin: 1em auto;
+background: var(--primary);
+color: var(--borderTable);
+padding: 1em;
+font-size: 1em;
+letter-spacing: 0.5px;
+border: 2px solid var(--primary);
+border-radius: 0.25em;
+cursor: pointer;
+display: none;
+}
+
 
 /* Fim Informações */
 /* Tabela */
@@ -207,6 +231,24 @@ input:focus{box-shadow: 0px 0px 3px 1px var(--primary);}
 
 }
 .btn-validation:hover{
+    background: transparent;
+    color: var(--primary);
+}
+
+.btn-verificar{
+    margin: 1em 0;
+    background: var(--primary);
+    color:  black;
+    padding: 1em;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+    border: 3px solid var(--primary);
+    border-radius: 0.25em;
+    transition: background 0.5s ease-in;
+    cursor: pointer;
+}
+
+.btn-verificar:hover{
     background: transparent;
     color: var(--primary);
 }

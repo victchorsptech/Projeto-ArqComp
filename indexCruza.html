@@ -46,6 +46,7 @@
         <label id="question"></label>
         <input type="text" placeholder="Insira a palavra" id="input_answer">
         <button class="btn-validation" onclick="validar_resposta()" id="btn">Validar Resposta</button>
+        <button class="btn-verificar" onclick="verificacao()" id="verif">Verificar Cruzadinha</button>
         <span id="validation_msg"></span>
     </div>
 </section>
@@ -62,36 +63,18 @@
     <p> <b>Diulia Victória e Victor Souza - ADS-C </b> </p>
 </article>
 
-<div class="conf"
-style="padding: 1em;
-border: 2px solid yellow;
-width: 18em;
-margin: 1.5em auto;
-border-radius: 2em;
-text-align: center;
-font-size: 1em;
-color: blueviolet;">
-<div class="timer" id="timer"></div>
-
+<div class="conf">
+<div class="timer" id="timer" style="display:none ;"></div>
+<div id="resultado"></div>
 <div id="resposta" ></div>
-<button  onClick="window.location.reload()" id="novo_jogo"
-style="margin: 1em auto;
-background: var(--primary);
-color: var(--borderTable);
-padding: 1em;
-font-size: 1em;
-letter-spacing: 0.5px;
-border: 2px solid var(--primary);
-border-radius: 0.25em;
-cursor: pointer;
-display: none;">
+<button  onClick="window.location.reload()" id="novo_jogo">
 Novo Jogo</button>
 </div>
 </section>           
 
 
 <!-- Tabela -->
-<table>
+<table id="cruza">
 <!-- Linha 1 -->
 <tr>
     <!-- Colunas -->
